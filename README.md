@@ -1,39 +1,39 @@
-**Welcome to your Base44 project** 
+**Venomous Sync Pulse Pro - Streamlit Edition**
 
-**About**
+## About
+This project has been rewritten from a React application into a premium, high-performance **Python Streamlit** application. It provides a centralized dashboard for managing IT entities like employees, hardware, and issues.
 
-View and Edit  your app on [Base44.com](http://Base44.com) 
+## 🚀 Getting Started
 
-This project contains everything you need to run your app locally.
+### Prerequisites
+1. **Python 3.8+**
+2. Clone the repository
+3. Create a virtual environment: `python -m venv .venv`
+4. Activate the environment and install dependencies:
+   ```bash
+   pip install streamlit requests
+   ```
 
-**Edit the code in your local development environment**
-
-Any change pushed to the repo will also be reflected in the Base44 Builder.
-
-**Prerequisites:** 
-
-1. Clone the repository using the project's Git URL 
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Create an `.env.local` file and set the right environment variables
-
-```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
-
-e.g.
-VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
-VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
+### Running the App
+Launch the application locally:
+```bash
+streamlit run streamlit_app.py
 ```
 
-Run the app: `npm run dev`
+## 📖 Documentation
+Detailed records of the development process and technical guides can be found in the [docs/](./docs/README.md) directory:
 
-**Publish your changes**
+- [**Initial Rewrite Walkthrough**](./docs/01_streamlit_rewrite.md)
+- [**Navigation & Data Architecture**](./docs/02_navigation_and_data.md)
+- [**UI & Premium Styling**](./docs/03_ui_and_styling.md)
+- [**Dashboard Refinement**](./docs/04_dashboard_refinement.md)
+- [**Data Source & API Guide**](./docs/05_data_source_guide.md)
 
-Open [Base44.com](http://Base44.com) and click on Publish.
+## Project Structure
+- `streamlit_app.py`: Main entry & Navigation
+- `pages/`: Individual application modules
+- `utils/`: Shared utilities (API Client, CSS Styles)
+- `docs/`: Technical documentation and walkthroughs
 
-**Docs & Support**
-
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
-
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+---
+*Created by Antigravity*
