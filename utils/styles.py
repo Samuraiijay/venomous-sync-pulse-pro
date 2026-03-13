@@ -33,12 +33,12 @@ def apply_custom_styles():
         }
 
         .stCard {
-            background: var(--card-bg);
-            border-radius: 1rem;
-            border: 1px solid var(--border-color);
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            transition: all 0.2s ease-in-out;
+            background: var(--card-bg) !important;
+            border-radius: 1rem !important;
+            border: 1px solid var(--border-color) !important;
+            padding: 1.5rem !important;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1) !important;
+            transition: all 0.2s ease-in-out !important;
         }
 
         .stCard:hover {
@@ -47,36 +47,58 @@ def apply_custom_styles():
         }
 
         .stat-card {
-            border-left: 4px solid var(--primary);
+            border-left: 4px solid var(--primary) !important;
         }
 
         .metric-label {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            font-weight: 500;
+            color: var(--text-muted) !important;
+            font-size: 0.875rem !important;
+            font-weight: 500 !important;
         }
 
         .metric-value {
-            color: var(--text-main);
-            font-size: 1.875rem;
-            font-weight: 700;
-            margin-top: 0.25rem;
+            color: var(--text-main) !important;
+            font-size: 1.875rem !important;
+            font-weight: 700 !important;
+            margin-top: 0.25rem !important;
         }
 
         .stat-badge {
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 0.5rem;
-            border-radius: 9999px;
-            margin-top: 0.5rem;
-            display: inline-block;
+            font-size: 0.7rem !important;
+            font-weight: 700 !important;
+            padding: 0.2rem 0.6rem !important;
+            border-radius: 6px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            letter-spacing: 0.02em !important;
+            text-transform: uppercase !important;
         }
 
-        .badge-indigo { background: #eef2ff; color: #4338ca; }
-        .badge-rose { background: #fff1f2; color: #be123c; }
-        .badge-cyan { background: #ecfeff; color: #0e7490; }
-        .badge-amber { background: #fffbeb; color: #b45309; }
-        .badge-emerald { background: #ecfdf5; color: #047857; }
+        .badge-indigo { 
+            background: rgba(129, 140, 248, 0.1) !important; 
+            color: #818cf8 !important; 
+            border: 1px solid rgba(129, 140, 248, 0.2) !important;
+        }
+        .badge-rose { 
+            background: rgba(251, 113, 133, 0.1) !important; 
+            color: #fb7185 !important; 
+            border: 1px solid rgba(251, 113, 133, 0.2) !important;
+        }
+        .badge-cyan { 
+            background: rgba(34, 211, 238, 0.1) !important; 
+            color: #22d3ee !important; 
+            border: 1px solid rgba(34, 211, 238, 0.2) !important;
+        }
+        .badge-amber { 
+            background: rgba(251, 191, 36, 0.1) !important; 
+            color: #fbbf24 !important; 
+            border: 1px solid rgba(251, 191, 36, 0.2) !important;
+        }
+        .badge-emerald { 
+            background: rgba(52, 211, 153, 0.1) !important; 
+            color: #34d399 !important; 
+            border: 1px solid rgba(52, 211, 153, 0.2) !important;
+        }
 
         /* Custom Sidebar Styling */
         [data-testid="stSidebar"] {
@@ -104,22 +126,22 @@ def apply_custom_styles():
             font-weight: 700 !important;
         }
         .profile-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 1rem;
-            object-fit: cover;
-            border: 3px solid white;
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            width: 80px !important;
+            height: 80px !important;
+            border-radius: 1rem !important;
+            object-fit: cover !important;
+            border: 3px solid white !important;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1) !important;
         }
 
         /* Glassmorphism effect for filters */
         .filter-container {
-            background: rgba(30, 41, 59, 0.7); /* Dark semi-transparent */
-            backdrop-filter: blur(10px);
-            border-radius: 1rem;
-            padding: 1.25rem;
-            border: 1px solid var(--border-color);
-            margin-bottom: 2rem;
+            background: rgba(30, 41, 59, 0.7) !important;
+            backdrop-filter: blur(10px) !important;
+            border-radius: 1rem !important;
+            padding: 1.25rem !important;
+            border: 1px solid var(--border-color) !important;
+            margin-bottom: 2rem !important;
         }
 
         /* Custom Tabs */
@@ -130,14 +152,14 @@ def apply_custom_styles():
         }
 
         .stTabs [data-baseweb="tab"] {
-            height: 40px;
-            padding: 0 1.25rem;
-            background-color: var(--card-bg);
-            border-radius: 0.75rem;
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-weight: 500;
-            transition: all 0.2s ease;
+            height: 40px !important;
+            padding: 0 1.25rem !important;
+            background-color: var(--card-bg) !important;
+            border-radius: 0.75rem !important;
+            border: 1px solid var(--border-color) !important;
+            color: var(--text-muted) !important;
+            font-weight: 500 !important;
+            transition: all 0.2s ease !important;
         }
 
         .stTabs [data-baseweb="tab"]:hover {

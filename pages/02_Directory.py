@@ -68,21 +68,25 @@ def show_directory():
         grid_cols = st.columns(3)
         for i, emp in enumerate(filtered):
             with grid_cols[i % 3]:
-                # In Streamlit, we use links to the profile page with a query param
-                # Note: Streamlit pages in pages/ are accessible via /Profile
-                profile_link = f"/Profile?id={emp['id']}"
+                # Map status to badge class
+                status_class = {
+                    "active": "badge-emerald",
+                    "inactive": "badge-rose",
+                    "on_leave": "badge-amber"
+                }.get(emp.get('status', '').lower(), "badge-indigo")
                 
                 st.markdown(f"""
                     <div class='stCard' style='margin-bottom: 1rem;'>
                         <div style='display: flex; gap: 1rem; align-items: start;'>
                             <img src='{emp['profile_picture_url']}' class='profile-avatar' style='width: 56px; height: 56px; margin-bottom: 0;'>
                             <div style='flex: 1; min-width: 0;'>
-                                <div style='font-weight: 700; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>{emp['full_name']}</div>
-                                <div style='font-size: 0.875rem; color: #64748b;'>{emp['job_title']}</div>
-                                <div style='display: flex; gap: 8px; margin-top: 8px;'>
-                                    <span style='font-size: 10px; padding: 2px 6px; background: #f1f5f9; border-radius: 4px; color: #475569;'>{emp['department']}</span>
+                                <div style='font-weight: 700; color: white; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>{emp['full_name']}</div>
+                                <div style='font-size: 0.875rem; color: #94a3b8;'>{emp['job_title']}</div>
+                                <div style='display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;'>
+                                    <span class='stat-badge {status_class}' style='margin-top: 0;'>{emp.get('status', 'Unknown').title()}</span>
+                                    <span class='stat-badge badge-indigo' style='margin-top: 0; opacity: 0.8;'>{emp['department']}</span>
                                 </div>
-                                <a href='/Profile?id={emp['id']}' target='_self' style='display: inline-block; margin-top: 12px; font-size: 12px; color: #6366f1; font-weight: 600; text-decoration: none;'>View Profile →</a>
+                                <a href='/Profile?id={emp['id']}' target='_self' style='display: inline-block; margin-top: 12px; font-size: 12px; color: #818cf8; font-weight: 600; text-decoration: none;'>View Profile →</a>
                             </div>
                         </div>
                     </div>
