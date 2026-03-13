@@ -13,22 +13,8 @@ st.set_page_config(
 # Apply custom styling
 apply_custom_styles()
 
-def main():
-    # Sidebar Logo/Title
-    st.sidebar.markdown("""
-        <div style='display: flex; align-items: center; gap: 12px; margin-bottom: 2rem;'>
-            <div style='background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;'>
-                V
-            </div>
-            <h2 style='margin: 0; font-size: 1.25rem;'>Pulse Pro</h2>
-        </div>
-    """, unsafe_allow_html=True)
-    
-    st.sidebar.markdown("---")
-
-    # App landing page content if no specific page is selected via sidebar
-    # (Streamlit handles page navigation automatically if files are in pages/)
-    
+def show_home():
+    """Home / Landing Page content"""
     st.title("Welcome to Venom Pulse Pro")
     st.markdown("""
         ### IT Data Management simplified.
@@ -72,5 +58,31 @@ def main():
             </div>
         """, unsafe_allow_html=True)
 
-if __name__ == "__main__":
-    main()
+# Define the pages
+pages = [
+    st.Page(show_home, title="Home", icon="🏠", default=True),
+    st.Page("pages/01_Dashboard.py", title="Dashboard", icon="📊"),
+    st.Page("pages/02_Directory.py", title="Directory", icon="👥"),
+    st.Page("pages/03_Profile.py", title="Profile", icon="👤"),
+    st.Page("pages/04_Compare.py", title="Compare", icon="🔄"),
+    st.Page("pages/05_Import.py", title="Import", icon="📥"),
+]
+
+# Initialize navigation
+pg = st.navigation(pages)
+
+# Sidebar Logo/Title
+st.sidebar.markdown("""
+    <div style='display: flex; align-items: center; gap: 12px; margin-bottom: 2rem;'>
+        <div style='background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;'>
+            V
+        </div>
+        <h2 style='margin: 0; font-size: 1.25rem;'>Pulse Pro</h2>
+    </div>
+""", unsafe_allow_html=True)
+
+st.sidebar.markdown("---")
+
+# Run the selected page
+pg.run()
+
