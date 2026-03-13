@@ -58,11 +58,11 @@ def show_dashboard():
         count = len([e for e in employees if e.get('source') == src['id']])
         with src_cols[i]:
             st.markdown(f"""
-                <div style='display: flex; align-items: center; gap: 12px; padding: 1rem; background: white; border-radius: 12px; border: 1px solid rgba(226, 232, 240, 0.6);'>
-                    <div style='width: 10px; height: 10px; border-radius: 50%; background: {src['color']};'></div>
+                <div class='stCard' style='display: flex; align-items: center; gap: 12px; padding: 1rem !important;'>
+                    <div style='width: 10px; height: 10px; border-radius: 50%; background: {src['color']}; flex-shrink: 0;'></div>
                     <div>
-                        <div style='font-size: 0.875rem; font-weight: 600; color: #1e293b;'>{src['label']}</div>
-                        <div style='font-size: 0.875rem; color: #64748b;'>{count} profiles</div>
+                        <div style='font-size: 0.875rem; font-weight: 600; color: var(--text-main);'>{src['label']}</div>
+                        <div style='font-size: 0.875rem; color: var(--text-muted);'>{count} profiles</div>
                     </div>
                 </div>
             """, unsafe_allow_html=True)
