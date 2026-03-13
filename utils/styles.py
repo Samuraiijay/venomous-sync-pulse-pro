@@ -124,25 +124,34 @@ def apply_custom_styles():
 
         /* Custom Tabs */
         .stTabs [data-baseweb="tab-list"] {
-            gap: 1rem;
+            gap: 0.5rem;
             background-color: transparent;
+            margin-bottom: 1rem;
         }
 
         .stTabs [data-baseweb="tab"] {
             height: 40px;
-            padding: 0 1.5rem;
-            background-color: white;
+            padding: 0 1.25rem;
+            background-color: var(--card-bg);
             border-radius: 0.75rem;
             border: 1px solid var(--border-color);
             color: var(--text-muted);
             font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .stTabs [data-baseweb="tab"]:hover {
+            border-color: var(--primary);
+            color: white;
         }
 
         .stTabs [aria-selected="true"] {
-            background-color: var(--text-main) !important;
-            color: white !important;
-            border-color: var(--text-main) !important;
+            background-color: var(--primary) !important;
+            color: #000000 !important;
+            border-color: var(--primary) !important;
+            font-weight: 700 !important;
         }
+
         /* Custom Button Styling */
         .stButton button {
             color: #000000 !important; /* Changes the text color */

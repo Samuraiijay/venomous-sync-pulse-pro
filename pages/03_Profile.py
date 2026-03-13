@@ -77,8 +77,6 @@ def show_profile():
     tab_details, tab_hardware, tab_issues = st.tabs(["Details", f"Hardware ({len(hardware)})", f"Issues ({len(issues)})"])
     
     with tab_details:
-        st.markdown("<div class='stCard'>", unsafe_allow_html=True)
-        st.markdown("### Contact & General Information")
         details = [
             ("Email", employee.get('email')),
             ("Department", employee.get('department')),
@@ -88,15 +86,19 @@ def show_profile():
             ("Source", employee.get('source', 'manual').replace('_', ' ').title()),
         ]
         
+        details_list = ["<div class='stCard'>", "<h3>Contact & General Information</h3>"]
         for label, value in details:
             if value:
-                st.markdown(f"""
-                    <div style='display: flex; border-bottom: 1px solid #f1f5f9; padding: 12px 0;'>
-                        <div style='width: 140px; color: #64748b; font-size: 0.875rem;'>{label}</div>
-                        <div style='font-weight: 500; color: #1e293b;'>{value}</div>
-                    </div>
-                """, unsafe_allow_html=True)
-        st.markdown("</div>", unsafe_allow_html=True)
+                details_list.append(
+                    f"<div style='display: flex; border-bottom: 1px solid var(--border-color); padding: 12px 0;'>"
+                    f"<div style='width: 140px; color: var(--text-muted); font-size: 0.875rem;'>{label}</div>"
+                    f"<div style='font-weight: 500; color: white;'>{value}</div>"
+                    f"</div>"
+                )
+        details_list.append("</div>")
+        
+        st.markdown("".join(details_list), unsafe_allow_html=True)
+
 
     with tab_hardware:
         if not hardware:
